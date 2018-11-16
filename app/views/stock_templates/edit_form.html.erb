@@ -4,49 +4,33 @@
 
 <hr>
 
-<!-- Form stock start -->
 <form action="/update_stock/<%= @stock.id %>" method="post" enctype="multipart/form-data">
-<!-- Form stock end -->
 
-  <!-- Label and input for caption start -->
   <div class="form-group">
     <label for="caption">
       Caption
     </label>
 
-    <!-- Input for caption start -->
     <input type="text" id="caption" name="caption" class="form-control" value="<%= @stock.caption %>">
-    <!-- Input for caption end -->
   </div>
-  <!-- Label and input for caption end -->
 
-  <!-- Label and input for image start -->
   <div class="form-group">
     <label for="image">
       Image
     </label>
 
-    <!-- Input for image start -->
     <%= cl_image_tag(@stock.image.to_s, :width => 90, :height => 90, :crop => :thumb) %>
     <input type="file" id="image" name="image" class="form-control">
-    <!-- Input for image end -->
   </div>
-  <!-- Label and input for image end -->
 
-  <!-- Label and input for owner_id start -->
-  <!-- Label and input for owner_id end -->
 
-  <!-- Label and input for location start -->
   <div class="form-group">
     <label for="location">
       Location
     </label>
 
-    <!-- Input for location start -->
     <input type="text" id="location" name="location" class="form-control" value="<%= @stock.location %>">
-    <!-- Input for location end -->
   </div>
-  <!-- Label and input for location end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Update stock

@@ -4,24 +4,16 @@
 
 <hr>
 
-<!-- Form upvote start -->
 <form action="/update_upvote/<%= @upvote.id %>" method="post">
-<!-- Form upvote end -->
 
-  <!-- Label and input for user_id start -->
-  <!-- Label and input for user_id end -->
 
-  <!-- Label and input for stock_id start -->
   <div class="form-group">
     <label for="stock_id">
       Stock
     </label>
 
-    <!-- Input for stock_id start -->
     <%= select_tag(:stock_id, options_from_collection_for_select(Stock.all, :id, :caption, @upvote.stock_id), :class => "form-control") %>
-    <!-- Input for stock_id end -->
   </div>
-  <!-- Label and input for stock_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Update upvote

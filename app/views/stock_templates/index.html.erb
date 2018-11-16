@@ -10,21 +10,17 @@
   </div>
 </div>
 
-<!-- Ransack Code start -->
 <div class="row">
   <div class="col-md-12 mb-3">
     <%= render partial: "stock_templates/stocks_search_form" %>
   </div>
 </div>
-<!-- Ransack Code end -->
 
-<!-- Location Map Code start -->
 <div class="row mb-3">
   <div class="col-md-12">
     <%= render partial: "stock_templates/all_photos_map" %>
   </div>
 </div>
-<!-- Location Map Code end -->
 
 <hr>
 
@@ -66,25 +62,18 @@
 
       <% @stocks.each do |stock| %>
       <tr>
-        <!-- Display stock.id start -->
         <td>
           <%= stock.id %>
         </td>
-        <!-- Display stock.id end -->
 
-        <!-- Display stock.caption start -->
         <td>
           <%= stock.caption %>
         </td>
-        <!-- Display stock.caption end -->
 
-        <!-- Display stock.image start -->
         <td>
           <img src='<%= stock.image %>' class='img-fluid'>
         </td>
-        <!-- Display stock.image end -->
 
-        <!-- Display stock.owner_id start -->
         <td>
           <% if stock.owner.present? %>
             <a href="/users/<%= stock.owner.id %>">
@@ -92,25 +81,18 @@
             </a>
           <% end %>
         </td>
-        <!-- Display stock.owner_id end -->
 
-        <!-- Display stock.location start -->
         <td>
           <%= stock.location %>
         </td>
-        <!-- Display stock.location end -->
 
-        <!-- Display stock.created_at start -->
         <td>
           <%= time_ago_in_words(stock.created_at) %> ago
         </td>
-        <!-- Display stock.created_at end -->
 
-        <!-- Display stock.updated_at start -->
         <td>
           <%= time_ago_in_words(stock.updated_at) %> ago
         </td>
-        <!-- Display stock.updated_at end -->
 
         <td>
           <a href="/stocks/<%= stock.id %>">

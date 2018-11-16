@@ -11,62 +11,48 @@
         </a>
       </div>
 
-      <!-- Edit link downvote start -->
       <div class="col">
         <a href="/downvotes/<%= @downvote.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit downvote
         </a>
       </div>
-      <!-- Edit link downvote end -->
 
-      <!-- Delete link downvote start -->
       <div class="col">
         <a href="/delete_downvote/<%= @downvote.id %>" class="btn btn-block btn-outline-secondary">
           Delete downvote
         </a>
       </div>
-      <!-- Delete link downvote end -->
     </div>
 
     <dl>
       <dt>
         User
       </dt>
-      <!-- Display user_id start -->
       <dd>
         <%= @downvote.user_id %>
       </dd>
-      <!-- Display user_id end -->
 
       <dt>
         Stock
       </dt>
-      <!-- Display stock_id start -->
       <dd>
         <%= @downvote.stock_id %>
       </dd>
-      <!-- Display stock_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@downvote.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@downvote.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->

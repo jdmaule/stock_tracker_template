@@ -6,11 +6,9 @@
   <ul class="list-group list-group-flush">
     <% @user.liked_photos.each do |stock| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/stocks/<%= stock.id %>">
           <%= stock.caption %>
         </a>
-        <!-- Show link end -->
 
       </li>
     <% end %>
