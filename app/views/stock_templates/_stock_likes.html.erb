@@ -17,9 +17,11 @@
         <!-- Show link end -->
 
         <!-- Delete link start -->
-        <a href="/delete_upvote_from_photo/<%= upvote.id %>">
-          Delete
-        </a>
+        <%if current_user == upvote.user %>
+          <a href="/delete_upvote_from_stock/<%= upvote.id %>">
+            Delete
+          </a>
+        <% end %>
         <!-- Delete link end -->
 
       </li>

@@ -13,17 +13,21 @@
 
       <!-- Edit link upvote start -->
       <div class="col">
-        <a href="/upvotes/<%= @upvote.id %>/edit" class="btn btn-block btn-outline-secondary">
-          Edit upvote
-        </a>
+        <% if current_user == @upvote.user %>
+          <a href="/upvotes/<%= @upvote.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
+            Edit upvote
+          </a>
+        <% end %>
       </div>
       <!-- Edit link upvote end -->
 
       <!-- Delete link upvote start -->
       <div class="col">
-        <a href="/delete_upvote/<%= @upvote.id %>" class="btn btn-block btn-outline-secondary">
-          Delete upvote
-        </a>
+        <% if current_user == @upvote.user %>
+          <a href="/delete_upvote/<%= @upvote.id %>" class="btn btn-block btn-sm btn-outline-secondary">
+            Delete upvote
+          </a>
+        <% end %>
       </div>
       <!-- Delete link upvote end -->
     </div>
