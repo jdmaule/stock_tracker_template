@@ -58,13 +58,21 @@
 
         <!-- Display upvote.user_id start -->
         <td>
-          <%= upvote.user.username %>
+          <% if upvote.user.present? %>
+            <a href="/users/<%= upvote.user.id %>">
+              <%= upvote.user.username %>
+            </a>
+          <% end %>
         </td>
         <!-- Display upvote.user_id end -->
 
         <!-- Display upvote.stock_id start -->
         <td>
-          <%= upvote.photo.caption %>
+          <% if upvote.photo.present? %>
+            <a href="/stocks/<%= upvote.photo.id %>">
+              <%= upvote.photo.caption %>
+            </a>
+          <% end %>
         </td>
         <!-- Display upvote.stock_id end -->
 

@@ -82,7 +82,11 @@
 
         <!-- Display stock.owner_id start -->
         <td>
-          <%= stock.owner.username %>
+          <% if stock.owner.present? %>
+            <a href="/users/<%= stock.owner.id %>">
+              <%= stock.owner.username %>
+            </a>
+          <% end %>
         </td>
         <!-- Display stock.owner_id end -->
 

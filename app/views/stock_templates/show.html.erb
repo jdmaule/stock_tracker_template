@@ -56,7 +56,11 @@
       </dt>
       <!-- Display owner_id start -->
       <dd>
-        <%= @stock.owner_id %>
+        <% if @stock.owner.present? %>
+          <a href="/users/<%= @stock.owner_id %>">
+            <%= @stock.owner.username %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display owner_id end -->
 

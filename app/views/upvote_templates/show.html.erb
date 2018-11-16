@@ -38,7 +38,11 @@
       </dt>
       <!-- Display user_id start -->
       <dd>
-        <%= @upvote.user_id %>
+        <% if @upvote.user.present? %>
+          <a href="/users/<%= @upvote.user_id %>">
+            <%= @upvote.user.username %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display user_id end -->
 
@@ -47,7 +51,11 @@
       </dt>
       <!-- Display stock_id start -->
       <dd>
-        <%= @upvote.stock_id %>
+        <% if @upvote.photo.present? %>
+          <a href="/stocks/<%= @upvote.stock_id %>">
+            <%= @upvote.photo.caption %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display stock_id end -->
 
