@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Upvote resource:
+
+  # CREATE
+  get("/upvotes/new", { :controller => "upvotes", :action => "new_form" })
+  post("/create_upvote", { :controller => "upvotes", :action => "create_row" })
+
+  # READ
+  get("/upvotes", { :controller => "upvotes", :action => "index" })
+  get("/upvotes/:id_to_display", { :controller => "upvotes", :action => "show" })
+
+  # UPDATE
+  get("/upvotes/:prefill_with_id/edit", { :controller => "upvotes", :action => "edit_form" })
+  post("/update_upvote/:id_to_modify", { :controller => "upvotes", :action => "update_row" })
+
+  # DELETE
+  get("/delete_upvote/:id_to_remove", { :controller => "upvotes", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Stock resource:
 
   # CREATE

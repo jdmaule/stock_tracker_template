@@ -1,0 +1,73 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Upvote #<%= @upvote.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/upvotes" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link upvote start -->
+      <div class="col">
+        <a href="/upvotes/<%= @upvote.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit upvote
+        </a>
+      </div>
+      <!-- Edit link upvote end -->
+
+      <!-- Delete link upvote start -->
+      <div class="col">
+        <a href="/delete_upvote/<%= @upvote.id %>" class="btn btn-block btn-outline-secondary">
+          Delete upvote
+        </a>
+      </div>
+      <!-- Delete link upvote end -->
+    </div>
+
+    <dl>
+      <dt>
+        User
+      </dt>
+      <!-- Display user_id start -->
+      <dd>
+        <%= @upvote.user_id %>
+      </dd>
+      <!-- Display user_id end -->
+
+      <dt>
+        Stock
+      </dt>
+      <!-- Display stock_id start -->
+      <dd>
+        <%= @upvote.stock_id %>
+      </dd>
+      <!-- Display stock_id end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@upvote.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@upvote.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->
