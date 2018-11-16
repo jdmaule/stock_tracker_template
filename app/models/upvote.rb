@@ -1,6 +1,11 @@
 class Upvote < ApplicationRecord
   # Direct associations
 
+  belongs_to :photo,
+             :class_name => "Stock",
+             :foreign_key => "stock_id",
+             :counter_cache => :likes_count
+
   belongs_to :user
 
   # Indirect associations
