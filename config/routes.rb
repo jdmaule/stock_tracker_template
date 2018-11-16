@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "stocks#index"
   # Routes for the Downvote resource:
 
   # CREATE
