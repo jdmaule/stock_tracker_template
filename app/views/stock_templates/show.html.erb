@@ -12,55 +12,24 @@
       </div>
 
       <div class="col">
-        <% if current_user == @stock.owner %>
-          <a href="/stocks/<%= @stock.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
-            Edit stock
-          </a>
-        <% end %>
+        <a href="/stocks/<%= @stock.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit stock
+        </a>
       </div>
 
       <div class="col">
-        <% if current_user == @stock.owner %>
-          <a href="/delete_stock/<%= @stock.id %>" class="btn btn-block btn-sm btn-outline-secondary">
-            Delete stock
-          </a>
-        <% end %>
+        <a href="/delete_stock/<%= @stock.id %>" class="btn btn-block btn-outline-secondary">
+          Delete stock
+        </a>
       </div>
     </div>
 
     <dl>
       <dt>
-        Caption
+        Ticker
       </dt>
       <dd>
-        <%= @stock.caption %>
-      </dd>
-
-      <dt>
-        Image
-      </dt>
-      <dd>
-        <img src="<%= @stock.image %>" class="img-fluid">
-      </dd>
-
-      <dt>
-        Owner
-      </dt>
-      <dd>
-        <% if @stock.owner.present? %>
-          <a href="/users/<%= @stock.owner_id %>">
-            <%= @stock.owner.username %>
-          </a>
-        <% end %>
-      </dd>
-
-      <dt>
-        Location
-      </dt>
-      <dd>
-        <div>
-          <%= render partial: "stock_templates/one_photo_map" %>
-        </div>
+        <%= @stock.ticker %>
       </dd>
 
       <dt>
@@ -82,30 +51,12 @@
 
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
-    <%= render partial: "stock_templates/stock_likes" %>
+    <%= render partial: "stock_templates/stock_follows" %>
   </div>
 </div>
 
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <%= render partial: "stock_templates/stock_comments" %>
-  </div>
-</div>
-
-<div class="row mb-3">
-  <div class="col-md-8 offset-md-2">
-    <%= render partial: "stock_templates/stock_fan_followers" %>
-  </div>
-</div>
-
-<div class="row mb-3">
-  <div class="col-md-8 offset-md-2">
-    <%= render partial: "stock_templates/stock_followers" %>
-  </div>
-</div>
-
-<div class="row mb-3">
-  <div class="col-md-8 offset-md-2">
-    <%= render partial: "stock_templates/stock_fans" %>
   </div>
 </div>

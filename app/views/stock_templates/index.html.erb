@@ -16,11 +16,7 @@
   </div>
 </div>
 
-<div class="row mb-3">
-  <div class="col-md-12">
-    <%= render partial: "stock_templates/all_photos_map" %>
-  </div>
-</div>
+
 
 <hr>
 
@@ -33,19 +29,7 @@
         </th>
 
         <th>
-          Caption
-        </th>
-
-        <th>
-          Image
-        </th>
-
-        <th>
-          Owner
-        </th>
-
-        <th>
-          Location
+          Ticker
         </th>
 
         <th>
@@ -67,23 +51,7 @@
         </td>
 
         <td>
-          <%= stock.caption %>
-        </td>
-
-        <td>
-          <img src='<%= stock.image %>' class='img-fluid'>
-        </td>
-
-        <td>
-          <% if stock.owner.present? %>
-            <a href="/users/<%= stock.owner.id %>">
-              <%= stock.owner.username %>
-            </a>
-          <% end %>
-        </td>
-
-        <td>
-          <%= stock.location %>
+          <%= stock.ticker %>
         </td>
 
         <td>

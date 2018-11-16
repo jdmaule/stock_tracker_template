@@ -6,27 +6,17 @@ RSpec.describe Stock, type: :model do
 
     it { should have_many(:comments) }
 
-    it { should have_many(:likes) }
-
-    it { should belong_to(:owner) }
+    it { should have_many(:follows) }
 
     end
 
     describe "InDirect Associations" do
 
-    it { should have_many(:fans) }
-
-    it { should have_many(:followers) }
-
-    it { should have_many(:fan_followers) }
-
     end
 
     describe "Validations" do
 
-    it { should validate_presence_of(:image) }
-
-    it { should validate_presence_of(:owner_id) }
+    it { should validate_presence_of(:ticker) }
       
     end
 end

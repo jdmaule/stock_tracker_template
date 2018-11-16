@@ -1,6 +1,6 @@
-ActiveAdmin.register Stock do
+ActiveAdmin.register Follow do
 
- permit_params :ticker
+ permit_params :user_id, :stock_id, :notes
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #

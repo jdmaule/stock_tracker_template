@@ -1,0 +1,21 @@
+<div class="card">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    Follows
+
+    <a data-toggle="collapse" href="#user_follows_new_form">
+      Add follow
+    </a>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <% @user.follows.each do |follow| %>
+      <li class="list-group-item d-flex align-items-center justify-content-between">
+        <a href="/follows/<%= follow.id %>">
+          <%= follow.created_at %>
+        </a>
+
+      </li>
+    <% end %>
+
+  </ul>
+</div>

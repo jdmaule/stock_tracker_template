@@ -2,8 +2,8 @@
   <p class="lead">Narrow results:</p>
 
   <div class="form-group">
-    <%= f.label :caption_cont, "Caption contains" %>
-    <%= f.text_field :caption_cont, :class => "form-control", :placeholder => "Caption contains" %>
+    <%= f.label :ticker_cont, "Ticker contains" %>
+    <%= f.text_field :ticker_cont, :class => "form-control", :placeholder => "Ticker contains" %>
   </div>
 
   <div class="form-group">
@@ -48,26 +48,21 @@
 
 
   <div class="form-group">
-    <%= f.label :owner_username_cont, "User username contains" %>
-    <%= f.text_field :owner_username_cont, :class => "form-control", :placeholder => "User username contains" %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :created_at, "Upvote Created at" %>
+    <%= f.label :created_at, "Follow Created at" %>
     <div class="row">
       <div class='col-md-6 mb-1'>
-        <div class='input-group date' id='likesgteqcreated_atPicker' data-target-input="nearest">
-          <%= f.text_field :likes_created_at_gteq, :class => "form-control datetimepicker-input", :placeholder => "Upvote Created at greater than or equal to", :data => {:target => '#likesgteqcreated_atPicker'} %>
-          <div class="input-group-append" data-target='#likesgteqcreated_atPicker' data-toggle="datetimepicker">
+        <div class='input-group date' id='followsgteqcreated_atPicker' data-target-input="nearest">
+          <%= f.text_field :follows_created_at_gteq, :class => "form-control datetimepicker-input", :placeholder => "Follow Created at greater than or equal to", :data => {:target => '#followsgteqcreated_atPicker'} %>
+          <div class="input-group-append" data-target='#followsgteqcreated_atPicker' data-toggle="datetimepicker">
             <div class="input-group-text"><i class="fa fa-calendar"></i></div>
           </div>
         </div>
       </div>
 
       <div class='col-md-6'>
-        <div class='input-group date' id='likeslteqcreated_atPicker' data-target-input="nearest">
-          <%= f.text_field :likes_created_at_lteq, :class => "form-control datetimepicker-input", :placeholder => "Upvote Created at less than or equal to", :data => {:target => '#likeslteqcreated_atPicker'} %>
-          <div class="input-group-append" data-target='#likeslteqcreated_atPicker' data-toggle="datetimepicker">
+        <div class='input-group date' id='followslteqcreated_atPicker' data-target-input="nearest">
+          <%= f.text_field :follows_created_at_lteq, :class => "form-control datetimepicker-input", :placeholder => "Follow Created at less than or equal to", :data => {:target => '#followslteqcreated_atPicker'} %>
+          <div class="input-group-append" data-target='#followslteqcreated_atPicker' data-toggle="datetimepicker">
             <div class="input-group-text"><i class="fa fa-calendar"></i></div>
           </div>
         </div>
@@ -76,18 +71,18 @@
   </div>
   <script type="text/javascript">
       $(function () {
-          $('#likesgteqcreated_atPicker').datetimepicker({
+          $('#followsgteqcreated_atPicker').datetimepicker({
               format: 'YYYY-MM-DD hh:mm:SS'
           });
-          $('#likeslteqcreated_atPicker').datetimepicker({
+          $('#followslteqcreated_atPicker').datetimepicker({
               useCurrent: false,
               format: 'YYYY-MM-DD hh:mm:SS'
           });
-          $('#likesgteqcreated_atPicker').on("dp.change", function (e) {
-              $('#likeslteqcreated_atPicker').data("DateTimePicker").minDate(e.date);
+          $('#followsgteqcreated_atPicker').on("dp.change", function (e) {
+              $('#followslteqcreated_atPicker').data("DateTimePicker").minDate(e.date);
           });
-          $('#likeslteqcreated_atPicker').on("dp.change", function (e) {
-              $('#likesgteqcreated_atPicker').data("DateTimePicker").maxDate(e.date);
+          $('#followslteqcreated_atPicker').on("dp.change", function (e) {
+              $('#followsgteqcreated_atPicker').data("DateTimePicker").maxDate(e.date);
           });
       });
   </script>
@@ -95,21 +90,6 @@
   <div class="form-group">
     <%= f.label :comments_body_cont, "Comment body contains" %>
     <%= f.text_field :comments_body_cont, :class => "form-control", :placeholder => "Comment body contains" %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :fan_followers_username_cont, "User username contains" %>
-    <%= f.text_field :fan_followers_username_cont, :class => "form-control", :placeholder => "User username contains" %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :followers_username_cont, "User username contains" %>
-    <%= f.text_field :followers_username_cont, :class => "form-control", :placeholder => "User username contains" %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :fans_username_cont, "User username contains" %>
-    <%= f.text_field :fans_username_cont, :class => "form-control", :placeholder => "User username contains" %>
   </div>
 
 
