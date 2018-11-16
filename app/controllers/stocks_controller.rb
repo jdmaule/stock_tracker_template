@@ -10,7 +10,8 @@ class StocksController < ApplicationController
   end
 
   def index
-    @stocks = Stock.page(params[:page]).per(10)
+    @q = Stock.ransack(params[:q])
+    @stocks = @q.result(:distinct => true).includes(:owner, :likes, :comments, :fan_followers, :followers, :fans).page(params[:page]).per(10)
     @location_hash = Gmaps4rails.build_markers(@stocks.where.not(:location_latitude => nil)) do |stock, marker|
       marker.lat stock.location_latitude
       marker.lng stock.location_longitude

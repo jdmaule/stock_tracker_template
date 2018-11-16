@@ -10,7 +10,8 @@ class UpvotesController < ApplicationController
   end
 
   def index
-    @upvotes = current_user.likes.page(params[:page]).per(10)
+    @q = current_user.likes.ransack(params[:q])
+    @upvotes = @q.result(:distinct => true).includes(:user, :photo).page(params[:page]).per(10)
 
     render("upvote_templates/index.html.erb")
   end

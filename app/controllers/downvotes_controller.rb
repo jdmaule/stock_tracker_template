@@ -1,6 +1,7 @@
 class DownvotesController < ApplicationController
   def index
-    @downvotes = Downvote.page(params[:page]).per(10)
+    @q = Downvote.ransack(params[:q])
+    @downvotes = @q.result(:distinct => true).page(params[:page]).per(10)
 
     render("downvote_templates/index.html.erb")
   end
