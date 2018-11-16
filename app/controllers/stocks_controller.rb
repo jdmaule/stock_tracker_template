@@ -57,6 +57,14 @@ class StocksController < ApplicationController
     end
   end
 
+  def destroy_row_from_owner
+    @stock = Stock.find(params.fetch("id_to_remove"))
+
+    @stock.destroy
+
+    redirect_to("/users/#{@stock.owner_id}", notice: "Stock deleted successfully.")
+  end
+
   def destroy_row
     @stock = Stock.find(params.fetch("id_to_remove"))
 
