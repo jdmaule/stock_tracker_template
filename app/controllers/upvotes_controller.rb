@@ -32,6 +32,21 @@ class UpvotesController < ApplicationController
     end
   end
 
+  def create_row_from_stock
+    @upvote = Upvote.new
+
+    @upvote.user_id = params.fetch("user_id")
+    @upvote.stock_id = params.fetch("stock_id")
+
+    if @upvote.valid?
+      @upvote.save
+
+      redirect_to("/stocks/#{@upvote.stock_id}", notice: "Upvote created successfully.")
+    else
+      render("upvote_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @upvote = Upvote.find(params.fetch("prefill_with_id"))
 

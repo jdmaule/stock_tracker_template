@@ -6,6 +6,8 @@ class StocksController < ApplicationController
   end
 
   def show
+    @comment = Comment.new
+    @upvote = Upvote.new
     @stock = Stock.find(params.fetch("id_to_display"))
 
     render("stock_templates/show.html.erb")
