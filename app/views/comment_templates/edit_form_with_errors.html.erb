@@ -48,7 +48,7 @@
     </label>
 
     <!-- Input for stock_id start -->
-    <input type="text" id="stock_id" name="stock_id" class="form-control" value="<%= @comment.stock_id %>">
+    <%= select_tag(:stock_id, options_from_collection_for_select(Stock.all, :id, :caption, @comment.stock_id), :class => "form-control") %>
     <!-- Input for stock_id end -->
   </div>
   <!-- Label and input for stock_id end -->
