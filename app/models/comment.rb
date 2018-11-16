@@ -5,4 +5,6 @@ class Comment < ApplicationRecord
 
   # Validations
 
+  validates :stock_id, :presence => true
+
 end
