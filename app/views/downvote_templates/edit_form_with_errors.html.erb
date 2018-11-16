@@ -1,0 +1,53 @@
+<!-- Validation failure messages -->
+<% if @downvote.errors.any? %>
+  <% @downvote.errors.full_messages.each do |message| %>
+    <div class="alert">
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<h1>
+  Edit downvote #<%= @downvote.id %>
+</h1>
+
+<hr>
+
+<!-- Form downvote start -->
+<form action="/update_downvote/<%= @downvote.id %>" method="post">
+<!-- Form downvote end -->
+
+  <!-- Label and input for user_id start -->
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <!-- Input for user_id start -->
+    <input type="text" id="user_id" name="user_id" class="form-control" value="<%= @downvote.user_id %>">
+    <!-- Input for user_id end -->
+  </div>
+  <!-- Label and input for user_id end -->
+
+  <!-- Label and input for stock_id start -->
+  <div class="form-group">
+    <label for="stock_id">
+      Stock
+    </label>
+
+    <!-- Input for stock_id start -->
+    <input type="text" id="stock_id" name="stock_id" class="form-control" value="<%= @downvote.stock_id %>">
+    <!-- Input for stock_id end -->
+  </div>
+  <!-- Label and input for stock_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update downvote
+  </button>
+</form>
+
+<hr>
+
+<a href="/downvotes">
+  Go back
+</a>

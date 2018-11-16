@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Downvote resource:
+
+  # CREATE
+  get("/downvotes/new", { :controller => "downvotes", :action => "new_form" })
+  post("/create_downvote", { :controller => "downvotes", :action => "create_row" })
+
+  # READ
+  get("/downvotes", { :controller => "downvotes", :action => "index" })
+  get("/downvotes/:id_to_display", { :controller => "downvotes", :action => "show" })
+
+  # UPDATE
+  get("/downvotes/:prefill_with_id/edit", { :controller => "downvotes", :action => "edit_form" })
+  post("/update_downvote/:id_to_modify", { :controller => "downvotes", :action => "update_row" })
+
+  # DELETE
+  get("/delete_downvote/:id_to_remove", { :controller => "downvotes", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Comment resource:
 
   # CREATE
