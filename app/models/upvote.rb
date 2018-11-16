@@ -5,6 +5,8 @@ class Upvote < ApplicationRecord
 
   # Validations
 
+  validates :stock_id, :presence => true
+
   validates :user_id, :presence => true
 
 end
