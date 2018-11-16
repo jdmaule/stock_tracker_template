@@ -56,7 +56,7 @@ class UpvotesController < ApplicationController
   def update_row
     @upvote = Upvote.find(params.fetch("id_to_modify"))
 
-    @upvote.user_id = params.fetch("user_id")
+    
     @upvote.stock_id = params.fetch("stock_id")
 
     if @upvote.valid?
