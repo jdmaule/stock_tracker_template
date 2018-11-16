@@ -47,7 +47,7 @@ class StocksController < ApplicationController
 
     @stock.caption = params.fetch("caption")
     @stock.image = params.fetch("image") if params.key?("image")
-    @stock.owner_id = params.fetch("owner_id")
+    
     @stock.location = params.fetch("location")
 
     if @stock.valid?
