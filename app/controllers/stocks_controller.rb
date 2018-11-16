@@ -11,6 +11,11 @@ class StocksController < ApplicationController
 
   def index
     @stocks = Stock.all
+    @location_hash = Gmaps4rails.build_markers(@stocks.where.not(:location_latitude => nil)) do |stock, marker|
+      marker.lat stock.location_latitude
+      marker.lng stock.location_longitude
+      marker.infowindow "<h5><a href='/stocks/#{stock.id}'>#{stock.caption}</a></h5><small>#{stock.location_formatted_address}</small>"
+    end
 
     render("stock_templates/index.html.erb")
   end

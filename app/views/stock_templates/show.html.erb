@@ -65,7 +65,9 @@
       </dt>
       <!-- Display location start -->
       <dd>
-        <%= @stock.location %>
+        <div>
+          <%= render partial: "stock_templates/one_photo_map" %>
+        </div>
       </dd>
       <!-- Display location end -->
 
