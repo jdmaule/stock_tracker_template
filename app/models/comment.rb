@@ -5,6 +5,8 @@ class Comment < ApplicationRecord
 
   # Validations
 
+  validates :body, :presence => true
+
   validates :commenter_id, :presence => true
 
   validates :stock_id, :presence => true
