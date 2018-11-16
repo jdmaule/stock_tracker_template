@@ -59,7 +59,7 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params.fetch("id_to_modify"))
 
     @comment.body = params.fetch("body")
-    @comment.commenter_id = params.fetch("commenter_id")
+    
     @comment.stock_id = params.fetch("stock_id")
 
     if @comment.valid?
