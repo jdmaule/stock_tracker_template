@@ -1,0 +1,35 @@
+<h1>
+  Edit follow #<%= @follow.id %>
+</h1>
+
+<hr>
+
+<form action="/update_follow/<%= @follow.id %>" method="post">
+
+
+  <div class="form-group">
+    <label for="stock_id">
+      Stock
+    </label>
+
+    <%= select_tag(:stock_id, options_from_collection_for_select(Stock.all, :id, :ticker, @follow.stock_id), :class => "form-control") %>
+  </div>
+
+  <div class="form-group">
+    <label for="notes">
+      Notes
+    </label>
+
+    <input type="text" id="notes" name="notes" class="form-control" value="<%= @follow.notes %>">
+  </div>
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update follow
+  </button>
+</form>
+
+<hr>
+
+<a href="/follows">
+  Go back
+</a>

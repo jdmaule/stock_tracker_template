@@ -1,0 +1,18 @@
+<form action="/create_follow_from_stock" method="post">
+
+  <input type="hidden" name="user_id" value="<%= current_user.id %>">
+
+  <input type="hidden" name="stock_id" value="<%= @stock.id %>">
+
+  <div class="form-group">
+    <label for="notes">
+      Notes
+    </label>
+
+    <input type="text" id="notes" name="notes" class="form-control" value="<%= @follow.notes %>">
+  </div>
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create follow
+  </button>
+</form>

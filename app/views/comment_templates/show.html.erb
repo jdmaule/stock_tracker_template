@@ -51,9 +51,9 @@
         Stock
       </dt>
       <dd>
-        <% if @comment.photo.present? %>
+        <% if @comment.stock.present? %>
           <a href="/stocks/<%= @comment.stock_id %>">
-            <%= @comment.photo.caption %>
+            <%= @comment.stock.ticker %>
           </a>
         <% end %>
       </dd>

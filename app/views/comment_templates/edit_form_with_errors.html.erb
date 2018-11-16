@@ -28,7 +28,7 @@
       Stock
     </label>
 
-    <%= select_tag(:stock_id, options_from_collection_for_select(Stock.all, :id, :caption, @comment.stock_id), :class => "form-control") %>
+    <%= select_tag(:stock_id, options_from_collection_for_select(Stock.all, :id, :ticker, @comment.stock_id), :class => "form-control") %>
   </div>
 
   <button class="btn btn-block btn-outline-secondary">

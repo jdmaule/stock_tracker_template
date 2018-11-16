@@ -11,7 +11,7 @@ class CommentsController < ApplicationController
 
   def index
     @q = current_user.comments.ransack(params[:q])
-    @comments = @q.result(:distinct => true).includes(:commenter, :photo).page(params[:page]).per(10)
+    @comments = @q.result(:distinct => true).includes(:commenter, :stock).page(params[:page]).per(10)
 
     render("comment_templates/index.html.erb")
   end
@@ -90,7 +90,7 @@ class CommentsController < ApplicationController
     redirect_to("/users/#{@comment.commenter_id}", notice: "Comment deleted successfully.")
   end
 
-  def destroy_row_from_photo
+  def destroy_row_from_stock
     @comment = Comment.find(params.fetch("id_to_remove"))
 
     @comment.destroy

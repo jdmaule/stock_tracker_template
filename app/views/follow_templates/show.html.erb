@@ -1,0 +1,77 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Follow #<%= @follow.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/follows" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <div class="col">
+        <% if current_user == @follow.user %>
+          <a href="/follows/<%= @follow.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
+            Edit follow
+          </a>
+        <% end %>
+      </div>
+
+      <div class="col">
+        <% if current_user == @follow.user %>
+          <a href="/delete_follow/<%= @follow.id %>" class="btn btn-block btn-sm btn-outline-secondary">
+            Delete follow
+          </a>
+        <% end %>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        User
+      </dt>
+      <dd>
+        <% if @follow.user.present? %>
+          <a href="/users/<%= @follow.user_id %>">
+            <%= @follow.user.username %>
+          </a>
+        <% end %>
+      </dd>
+
+      <dt>
+        Stock
+      </dt>
+      <dd>
+        <% if @follow.stock.present? %>
+          <a href="/stocks/<%= @follow.stock_id %>">
+            <%= @follow.stock.ticker %>
+          </a>
+        <% end %>
+      </dd>
+
+      <dt>
+        Notes
+      </dt>
+      <dd>
+        <%= @follow.notes %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@follow.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@follow.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
