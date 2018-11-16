@@ -1,6 +1,6 @@
 class DownvotesController < ApplicationController
   def index
-    @downvotes = Downvote.all
+    @downvotes = Downvote.page(params[:page]).per(10)
 
     render("downvote_templates/index.html.erb")
   end
