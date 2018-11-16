@@ -5,4 +5,6 @@ class Stock < ApplicationRecord
 
   # Validations
 
+  validates :owner_id, :presence => true
+
 end
