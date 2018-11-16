@@ -1,6 +1,10 @@
 class User < ApplicationRecord
   # Direct associations
 
+  has_many   :likes,
+             :class_name => "Upvote",
+             :dependent => :destroy
+
   # Indirect associations
 
   # Validations
