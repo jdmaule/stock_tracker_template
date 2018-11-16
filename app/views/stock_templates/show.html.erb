@@ -13,17 +13,21 @@
 
       <!-- Edit link stock start -->
       <div class="col">
-        <a href="/stocks/<%= @stock.id %>/edit" class="btn btn-block btn-outline-secondary">
-          Edit stock
-        </a>
+        <% if current_user == @stock.owner %>
+          <a href="/stocks/<%= @stock.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
+            Edit stock
+          </a>
+        <% end %>
       </div>
       <!-- Edit link stock end -->
 
       <!-- Delete link stock start -->
       <div class="col">
-        <a href="/delete_stock/<%= @stock.id %>" class="btn btn-block btn-outline-secondary">
-          Delete stock
-        </a>
+        <% if current_user == @stock.owner %>
+          <a href="/delete_stock/<%= @stock.id %>" class="btn btn-block btn-sm btn-outline-secondary">
+            Delete stock
+          </a>
+        <% end %>
       </div>
       <!-- Delete link stock end -->
     </div>
