@@ -23,7 +23,7 @@ class StocksController < ApplicationController
     @stock = Stock.new
 
     @stock.caption = params.fetch("caption")
-    @stock.image = params.fetch("image")
+    @stock.image = params.fetch("image") if params.key?("image")
     @stock.owner_id = params.fetch("owner_id")
     @stock.location = params.fetch("location")
 
@@ -46,7 +46,7 @@ class StocksController < ApplicationController
     @stock = Stock.find(params.fetch("id_to_modify"))
 
     @stock.caption = params.fetch("caption")
-    @stock.image = params.fetch("image")
+    @stock.image = params.fetch("image") if params.key?("image")
     @stock.owner_id = params.fetch("owner_id")
     @stock.location = params.fetch("location")
 
